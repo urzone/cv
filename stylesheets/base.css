@@ -54,14 +54,17 @@ body {
 body {
     background: #c1c1c1;
     color: #606060;
-    font: 12px Arial, sans-serif;
-    font-weight: 300;
+    /*font: 12px Arial, sans-serif;*/
+    font-size: 12px;
+    font-family: "Avenir Next",  'Avenir',  "Helvetica Neue",  Helvetica,  "proxima-nova",  Arial, "Liberation Sans", "Source Han Sans CN", "Source Han Sans SC",  "Notosans CJK SC",  "Noto Sans S Chinese",  "PingFang SC", "Hiragino Sans GB",  "Microsoft  YaHei",  "Wenquanyi Micro Hei", "WenQuanYi Zen Hei", "ST Heiti",   "WenQuanYi ZenHei Sharp", sans-serif;
+    font-weight: normal;
     line-height: 20px
 }
 
 h1, h2, h3, h4, h5, h6 {
     color: #444;
-    font-family: 'Open Sans', Arial, sans-serif;
+    /*font-family: 'Open Sans', Arial, sans-serif;*/
+    font-family: "Avenir Next",  'Avenir',  "Helvetica Neue",  Helvetica,  "proxima-nova",  Arial, "Liberation Sans", "Source Han Sans CN", "Source Han Sans SC",  "Notosans CJK SC",  "Noto Sans S Chinese",  "PingFang SC", "Hiragino Sans GB",  "Microsoft  YaHei",  "Wenquanyi Micro Hei", "WenQuanYi Zen Hei", "ST Heiti",   "WenQuanYi ZenHei Sharp", sans-serif;
     font-weight: normal
 }
 
@@ -113,7 +116,7 @@ em {
 }
 
 strong {
-    font-weight: bold;
+    font-weight: 500;
     color: #333
 }
 
