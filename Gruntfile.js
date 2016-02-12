@@ -1,46 +1,74 @@
-module.exports = function(grunt){
-  grunt.initConfig({
-    gitclone: {
-      fontawesome: {
-        options: {
-          repository: 'https://github.com/FortAwesome/Font-Awesome.git',
-          directory: 'tmp/fontawesome'
+module.exports = function(grunt) {
+
+    // Project configuration.
+    grunt.initConfig({
+        pkg: grunt.file.readJSON('package.json'),
+        uglify: {
+            main: {
+                src: 'js/<%= pkg.name %>.js',
+                dest: 'js/<%= pkg.name %>.min.js'
+            }
         },
-      },
-      fancybox: {
-        options: {
-          repository: 'https://github.com/fancyapps/fancyBox.git',
-          directory: 'tmp/fancybox'
-        }
-      }
-    },
-    copy: {
-      fontawesome: {
-        expand: true,
-        cwd: 'tmp/fontawesome/fonts/',
-        src: ['**'],
-        dest: 'source/css/fonts/'
-      },
-      fancybox: {
-        expand: true,
-        cwd: 'tmp/fancybox/source/',
-        src: ['**'],
-        dest: 'source/fancybox/'
-      }
-    },
-    _clean: {
-      tmp: ['tmp'],
-      fontawesome: ['source/css/fonts'],
-      fancybox: ['source/fancybox']
-    }
-  });
+        less: {
+            expanded: {
+                options: {
+                    paths: ["css"]
+                },
+                files: {
+                    "css/<%= pkg.name %>.css": "less/<%= pkg.name %>.less"
+                }
+            },
+            minified: {
+                options: {
+                    paths: ["css"],
+                    cleancss: true
+                },
+                files: {
+                    "css/<%= pkg.name %>.min.css": "less/<%= pkg.name %>.less"
+                }
+            }
+        },
+        banner: '/*!\n' +
+            ' * <%= pkg.title %> v<%= pkg.version %> (<%= pkg.homepage %>)\n' +
+            ' * Copyright <%= grunt.template.today("yyyy") %> <%= pkg.author %>\n' +
+            ' * Licensed under <%= pkg.license.type %> (<%= pkg.license.url %>)\n' +
+            ' */\n',
+        usebanner: {
+            dist: {
+                options: {
+                    position: 'top',
+                    banner: '<%= banner %>'
+                },
+                files: {
+                    src: ['css/<%= pkg.name %>.css', 'css/<%= pkg.name %>.min.css', 'js/<%= pkg.name %>.min.js']
+                }
+            }
+        },
+        watch: {
+            scripts: {
+                files: ['js/<%= pkg.name %>.js'],
+                tasks: ['uglify'],
+                options: {
+                    spawn: false,
+                },
+            },
+            less: {
+                files: ['less/*.less'],
+                tasks: ['less'],
+                options: {
+                    spawn: false,
+                }
+            },
+        },
+    });
 
-  require('load-grunt-tasks')(grunt);
+    // Load the plugins.
+    grunt.loadNpmTasks('grunt-contrib-uglify');
+    grunt.loadNpmTasks('grunt-contrib-less');
+    grunt.loadNpmTasks('grunt-banner');
+    grunt.loadNpmTasks('grunt-contrib-watch');
 
-  grunt.renameTask('clean', '_clean');
+    // Default task(s).
+    grunt.registerTask('default', ['uglify', 'less', 'usebanner']);
 
-  grunt.registerTask('fontawesome', ['gitclone:fontawesome', 'copy:fontawesome', '_clean:tmp']);
-  grunt.registerTask('fancybox', ['gitclone:fancybox', 'copy:fancybox', '_clean:tmp']);
-  grunt.registerTask('default', ['gitclone', 'copy', '_clean:tmp']);
-  grunt.registerTask('clean', ['_clean']);
 };
