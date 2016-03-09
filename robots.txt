@@ -1,11 +1,5 @@
-# robots.txt
-User-agent: *
-Allow: /
-Allow: /archives/
+# robotstxt.org
 
-Disallow: /vendors/
-Disallow: /js/
-Disallow: /css/
-Disallow: /fonts/
-Disallow: /vendors/
-Disallow: /fancybox/
+User-agent: *
+
+Disallow: /blog/
