@@ -93,7 +93,8 @@ ul, ol {
 }
 
 .quote cite::before {
-    content: "-" padding : 0 5 px
+    content: "-" ;
+    padding : 0 4px;
 }
 
 .quote p, .quote div {
