@@ -24,7 +24,7 @@
 <meta name="msapplication-TileColor" content="#ffffff">
 <meta name="msapplication-TileImage" content="assets/icons/ms-icon-144x144.png">
 <meta name="theme-color" content="#ffffff">
-
+	
 
 </head>
 
@@ -32,16 +32,14 @@
 <div class="vi">
     <div class="sidebar">
         <div class="header">
-            
-            
-            <h1 class="animate-init" align="center">XiaO</h1>
+
+            <h1 class="animate-init" align="center">XiaO</h1>           
             <div class="quote">
                 <p class="quote-text animate-init">Be the change you wanna See in the world</p>
                 <p class="quote-author animate-init"> — Mahatma Gandhi</p>
             </div>
         </div>
         <div class="menu">
-
             <a href="http://urzone.github.io/" class="animate-init" target="_blank"><i class="lab-icon animate-init"></i> Lab.</a>
             <a href="http://urzone.github.io/categories/notes/" class="animate-init" target="_blank"><i class="notes-icon animate-init"></i> Notes</a>
             <a href="http://twitter.com/jacysh4w" class="animate-init" target="_blank"><i class="twitter-icon animate-init"></i> Twitter</a>
@@ -51,9 +49,12 @@
             </p>            
         </div>
         <div>
-            <img class="animate-init" src="avatar.jpg" width="120" alt="" /> <br />
-            <img class="animate-init" src="tagcloud.png" width="auto" style="center" alt="" /> 
+            <img class="animate-init" src="avatar.jpg" width="120" alt="" /> 
         </div>
+        <br />
+		<div align="center" >
+ 			<canvas id="canvas" width="280" ></canvas>
+		</div>
         <div class="location">
             <i class="location-icon animate-init"></i>
             <span class="location-text animate-init">ChengDu - China</span>
@@ -62,8 +63,30 @@
 
     <div class="content">
         <span class="close">close</span>
-    </div>
+    </div>	
 </div>
+
+<script type="text/javascript" src="assets/vendors/wordcloud2/wordcloud2.js"></script>
+<script> 
+var options = eval({
+  "list": [['Pharmaceutics', 7], ['Drug Delivery', 5], ['DDS', 5], ['Biopolymer', 5],['Cancer', 5],['Nano-micelles', 5]],
+  gridSize: 20,
+  weightFactor: function (size) {
+    return Math.pow(size, 2.5) * $('#canvas').width() / 1024;
+  },
+  fontFamily: 'oflgoudystm',
+  color: function (word, weight) {
+    return (weight === 6) ? '##cc2c31' : '#cc2c31';
+  },
+  rotateRatio: 0.5,
+  backgroundColor: '#f2eee3'
+})
+var canvas = document.getElementById('canvas');
+
+WordCloud(canvas, options);
+</script>
+
+
 <script type="text/javascript" src="assets/vendors/jquery/index.js"></script>
 <script>
     $(document).ready(function () {
