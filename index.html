@@ -52,8 +52,8 @@
             <img class="animate-init" src="avatar.jpg" width="120" alt="" /> 
         </div>
         <br />
-		<div align="center" class="animate-init">
- 			<canvas id="canvas" width="320" ></canvas>
+		<div align="center" >
+ 			<canvas class="animate-init" id="canvas" width="280" ></canvas>
 		</div>
         <div class="location">
             <i class="location-icon animate-init"></i>
@@ -69,7 +69,7 @@
 <script type="text/javascript" src="assets/vendors/wordcloud2/wordcloud2.js"></script>
 <script> 
 var options = eval({
-  "list": [['Pharmaceutics', 7], ['Drug Delivery', 5], ['DDS', 5], ['Biopolymer', 5],['Instrumental Analysis', 5], ['Chemistry', 5],['Cancer', 5],['Nano-micelles', 5]],
+  "list": [['Pharmaceutics', 7], ['Drug Delivery', 5], ['M.S.', 5], ['Biopolymer', 5],['Cancer', 5],['Nano-micelles', 5]],
   gridSize: 20,
   weightFactor: function (size) {
     return Math.pow(size, 2.5) * $('#canvas').width() / 1024;
