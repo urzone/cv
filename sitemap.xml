@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-<url><loc>http://urz.one/</loc><changefreq>daily</changefreq><priority>1.00</priority></url>
+<url><loc>https://urz.one/</loc><changefreq>daily</changefreq><priority>1.00</priority></url>
 <url><loc>https://blog.urz.one</loc><changefreq>daily</changefreq><priority>0.85</priority></url>
 <url><loc>https://blog.urz.one/notes/</loc><changefreq>daily</changefreq><priority>0.85</priority></url>
 <url><loc>https://cv.urz.one</loc><changefreq>daily</changefreq><priority>0.85</priority></url>
@@ -23,7 +23,7 @@
 <url><loc>https://blog.urz.one/160408/</loc><changefreq>daily</changefreq><priority>0.69</priority></url>
 <url><loc>https://blog.urz.one/page/2/</loc><changefreq>daily</changefreq><priority>0.69</priority></url>
 <url><loc>https://blog.urz.one/page/8/</loc><changefreq>daily</changefreq><priority>0.69</priority></url>
-<url><loc>https://urz.one</loc><changefreq>daily</changefreq><priority>0.56</priority></url>
+<url><loc>https://urz.one</loc><changefreq>daily</changefreq><priority>0.69</priority></url>
 <url><loc>https://blog.urz.one/archives/page/2/</loc><changefreq>daily</changefreq><priority>0.56</priority></url>
 <url><loc>https://blog.urz.one/archives/page/8/</loc><changefreq>daily</changefreq><priority>0.56</priority></url>
 <url><loc>https://blog.urz.one/tags/%E6%80%9D%E8%80%83/</loc><changefreq>daily</changefreq><priority>0.56</priority></url>
